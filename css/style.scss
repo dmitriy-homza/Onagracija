@@ -1,0 +1,32 @@
+$bg-green: #c1dcbd;
+$font-green: #60825b;
+$bg-gray: #e7e6e6;
+$font-gray: #6b6a6b;
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+header .wrapper {
+    max-width: 1020px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul {
+    display: flex;
+}
+header li {
+    list-style: none;
+}
