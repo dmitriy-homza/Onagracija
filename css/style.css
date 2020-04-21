@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.logo a, h1, .descr h3, .hoof-trimming .wrapper h3, .production h3, .production .slide h2 span, .production .slide-2 h2, .contacts h3, .contacts h5 {
+.logo a, h1, .descr h3, .hoof-trimming .wrapper h3, .production h3, .production .slide h2 span, .production .slide-2 h2, .contacts h3, .contacts h5, .contacts .card > div h4, footer h2 {
   font-family: 'Moloko', 'Monotype Corsiva';
   color: #60825b;
 }
@@ -117,11 +117,23 @@ a {
 }
 
 body {
-  background-color: #c1dcbd;
-  background-image: url(/assets/img/bg-1.svg);
+  background-color: #f7f7f7;
   background-position: 0% 0%;
   background-size: 100%;
   background-repeat: no-repeat;
+  color: #656565;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  background-position: 51% 102%;
+  background-size: 100%;
+  background-image: url(/assets/img/bg-1.svg);
 }
 
 *::-moz-selection {
@@ -235,8 +247,6 @@ h1 {
 button {
   margin-top: 40px;
   background-color: #c1dcbd;
-  -webkit-box-shadow: 1px 2px 5px rgba(105, 105, 105, 0.63);
-          box-shadow: 1px 2px 5px rgba(105, 105, 105, 0.63);
   padding: 10px;
   border-radius: 15px;
   border: none;
@@ -397,7 +407,6 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0px 150px;
 }
 
 .production .slider > img:nth-of-type(2) {
@@ -414,7 +423,6 @@ button {
 }
 
 .production .slide {
-  height: 100%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -471,6 +479,10 @@ button {
   margin-bottom: 90px;
 }
 
+.contacts {
+  margin-top: 40px;
+}
+
 .contacts h3 {
   font-size: 40px;
   text-align: center;
@@ -486,7 +498,7 @@ button {
 }
 
 .contacts .wrapper {
-  margin-top: 60px;
+  margin-top: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -533,7 +545,6 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px;
 }
 
 .contacts .wrapper .number img {
@@ -542,8 +553,6 @@ button {
 
 .contacts .wrapper .email {
   font-size: 20px;
-  padding: 20px;
-  padding-top: 8px;
 }
 
 .contacts .wrapper > div > div, .contacts .wrapper form {
@@ -556,28 +565,33 @@ button {
   display: flex;
   -ms-flex-line-pack: start;
       align-content: flex-start;
-  padding: 20px;
+  margin-top: 60px;
 }
 
 .contacts h5 {
-  font-size: 30px;
+  font-size: 45px;
   color: #60825b;
   text-align: center;
 }
 
 .contacts .call {
-  width: calc((100% - 30px) / 2);
+  width: 100%;
 }
 
 .contacts .card {
-  width: auto;
+  width: 100%;
   padding: 0px;
-}
-
-.contacts .send {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 500px;
+}
+
+.contacts .send {
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -624,8 +638,62 @@ button {
 
 .contacts iframe {
   border: none;
-  border-bottom-left-radius: 27px;
+  border-top-right-radius: 27px;
   border-bottom-right-radius: 27px;
+}
+
+h5 {
+  text-align: center;
+}
+
+.contacts .card > div {
+  width: 50%;
+  padding: 50px 100px 50px 50px;
+}
+
+.contacts .card > div h4 {
+  font-size: 60px;
+}
+
+.contacts .card > div p {
+  margin-top: 55px;
+  font-size: 20px;
+}
+
+.numail {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 400px;
+  height: 50px;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #e7e6e6;
+  margin-top: 80px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer h2 {
+  font-size: 32px;
+}
+
+footer > div {
+  width: 1150px;
+  margin: 20px auto;
 }
 
 /* Классы слайдера */
@@ -639,11 +707,18 @@ button {
   margin-bottom: -12px;
 }
 
+.slider > img:hover {
+  -webkit-filter: brightness(1.5);
+          filter: brightness(1.5);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .s-active, .next {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 20px 0px 15px 0px;
+  padding: 0px 0px 15px 0px;
 }
 
 .item {
