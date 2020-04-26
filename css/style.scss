@@ -83,7 +83,7 @@ textarea {resize:horizontal;}
 
 a {
     text-decoration: none;
-    color: $font-green;
+    color: $font-green
 }
 
 body {
@@ -104,7 +104,6 @@ body::before {
     right: 0;
     background-position: 51% 102%;
     background-size: 100%;
-    background-image: url(/assets/img/bg-1.svg);
 }
 
 
@@ -149,6 +148,25 @@ nav ul {
     align-self: center;
     min-width: 600px;
 }
+nav a {
+    text-decoration: none;
+    color: $font-green;
+    text-decoration: none;
+    display: inline;
+    background-image: linear-gradient(to bottom, transparent 20%, currentColor 21%);
+    
+    background-position: 0 20px;
+    background-repeat: no-repeat;
+    background-size: 0% 3px;
+    padding-bottom: 6px;
+    transition: background-size 0.3s ease-in-out 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  background-size: 100% 3px;
+  transition-delay: 0s;
+}
 
 header li {
     list-style: none;
@@ -163,8 +181,13 @@ header li {
 }
 
 main {
-    max-width: 1150px;
     margin: 0px auto;
+    scroll-snap-type: y mandatory;
+}
+ 
+section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
 }
 
 h1 {
@@ -173,11 +196,28 @@ h1 {
     font-weight: 400;
 }
 
+.begin {
+    background-size: cover;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    button {
+        transition: 0.3s;
+    }
+    button:hover {
+        box-shadow: -1px -1px white, -2px -2px white, -3px -3px white, -4px -4px $font-green;
+        -webkit-transform: translateX(4px);
+        transform: translateX(4px);
+        transition: 0.3s;
+    }
+}
+
 .begin .wrapper {
     @extend %flex-center;
     justify-content: space-between;
     height: calc(100vh - 100px);
-    width: 100%;
+    max-width: 1150px;
     padding: 0px 0px;
 }
 
@@ -211,7 +251,6 @@ button {
 
 .img {
     position: relative;
-    left: 97px;
     bottom: 20px;
     display: flex;
     align-items: center;
@@ -230,9 +269,11 @@ button {
 }
 
 .hoof-trimming {
-    margin-top: 40px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
     .wrapper {
-        padding: 50px, 0;
+        max-width: 1150px;
         display: flex;
         flex-direction: column;
         align-content: center;
@@ -253,7 +294,7 @@ button {
 
 .features {
     display: flex;
-    margin-top: 60px;
+    margin-top: 50px;
     flex-wrap: wrap;
     justify-content: space-between;
     background-image: url(/assets/img/cow.png);
@@ -380,7 +421,12 @@ button {
 }
 
 .contacts {
+    display: flex;
+    justify-content: center;
     margin-top: 40px;
+    .feed-wrap {
+        max-width: 1150px;
+    }
     h3 {
         @extend %font-moloko;
         font-size: 40px;
@@ -391,7 +437,7 @@ button {
         text-align: center;
         text-transform: uppercase;
         font-size: 16px;
-        padding-top: 20px;
+        padding-top: 12px;
         width: 100%;
     }
 
@@ -431,7 +477,7 @@ button {
         }
 
         & > div > div, form {
-            margin-top: 30px;
+            margin-top: 5px;
         }
     }
     .ivan {
@@ -632,7 +678,7 @@ footer {
     left: 0px;
     width: 100vw;
     height: 100vh;
-    background-color: $bg-gray;
+    background-color: $light-gray;
 }
 
 .loaded {

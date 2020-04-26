@@ -133,7 +133,6 @@ body::before {
   right: 0;
   background-position: 51% 102%;
   background-size: 100%;
-  background-image: url(/assets/img/bg-1.svg);
 }
 
 *::-moz-selection {
@@ -187,6 +186,28 @@ nav ul {
   min-width: 600px;
 }
 
+nav a {
+  text-decoration: none;
+  color: #60825b;
+  text-decoration: none;
+  display: inline;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, transparent), color-stop(21%, currentColor));
+  background-image: linear-gradient(to bottom, transparent 20%, currentColor 21%);
+  background-position: 0 20px;
+  background-repeat: no-repeat;
+  background-size: 0% 3px;
+  padding-bottom: 6px;
+  -webkit-transition: background-size 0.3s ease-in-out 0.2s;
+  transition: background-size 0.3s ease-in-out 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  background-size: 100% 3px;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
 header li {
   list-style: none;
   text-transform: uppercase;
@@ -202,8 +223,14 @@ header li a {
 }
 
 main {
-  max-width: 1150px;
   margin: 0px auto;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
 }
 
 h1 {
@@ -211,12 +238,38 @@ h1 {
   font-weight: 400;
 }
 
+.begin {
+  background-size: cover;
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+.begin button {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.begin button:hover {
+  -webkit-box-shadow: -1px -1px white, -2px -2px white, -3px -3px white, -4px -4px #60825b;
+          box-shadow: -1px -1px white, -2px -2px white, -3px -3px white, -4px -4px #60825b;
+  -webkit-transform: translateX(4px);
+  transform: translateX(4px);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .begin .wrapper {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: calc(100vh - 100px);
-  width: 100%;
+  max-width: 1150px;
   padding: 0px 0px;
 }
 
@@ -258,7 +311,6 @@ button {
 
 .img {
   position: relative;
-  left: 97px;
   bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -281,11 +333,17 @@ button {
 }
 
 .hoof-trimming {
-  margin-top: 40px;
+  margin-top: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .hoof-trimming .wrapper {
-  padding: 50px, 0;
+  max-width: 1150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -316,7 +374,7 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 60px;
+  margin-top: 50px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: justify;
@@ -480,7 +538,17 @@ button {
 }
 
 .contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 40px;
+}
+
+.contacts .feed-wrap {
+  max-width: 1150px;
 }
 
 .contacts h3 {
@@ -493,7 +561,7 @@ button {
   text-align: center;
   text-transform: uppercase;
   font-size: 16px;
-  padding-top: 20px;
+  padding-top: 12px;
   width: 100%;
 }
 
@@ -556,7 +624,7 @@ button {
 }
 
 .contacts .wrapper > div > div, .contacts .wrapper form {
-  margin-top: 30px;
+  margin-top: 5px;
 }
 
 .contacts .ivan {
@@ -819,7 +887,7 @@ footer > div {
   left: 0px;
   width: 100vw;
   height: 100vh;
-  background-color: #e7e6e6;
+  background-color: #f7f7f7;
 }
 
 .loaded {
