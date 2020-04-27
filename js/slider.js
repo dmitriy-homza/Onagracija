@@ -55,6 +55,10 @@ document.querySelector('.right').addEventListener('click', function() {
 });
 
 
+if (isEnabled) {
+	
+}
+
 
 
 

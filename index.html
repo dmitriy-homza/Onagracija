@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html lang="ru">
 <head>
     <style id="style" type="text/css"></style>
@@ -7,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-        <svg class="bg-svg" width="1185" height="1425" viewBox="0 0 4738 5917" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="bg-svg" id="bg-svg" width="1185" height="1425" viewBox="0 0 4738 5917" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path id="first" transform="skewX(0)" d="M4543.5 184.5C4835 467 4752.5 2576.5 4679.5 2878C4606.5 3179.5 4562.5 3518 3998 3518C3505.14 3518 2770.5 3108.5 2358 3108.5C1575.32 3108.5 1336 3399.5 724 3310.5C227.558 3238.3 -1.00004 2886.5 -1 2621C-0.999962 2355.5 23.4998 1636 868 1520C1541.5 1443 1906 1609 2045.5 1322.5C2179.34 1047.63 1808 882.5 1855.5 491C1903 99.4999 2242 14.5171 2562.5 9.4999C2953.32 3.38186 4252 -98.0001 4543.5 184.5Z" fill="#C1DCBD"> 
             </path>
             </svg>        
@@ -16,16 +17,17 @@
                 <div class="logo"><a href="">Онаграция</a></div>
                 <nav>
                     <ul>
-                        <li><a href="">Обрезка копыт</a></li>
-                        <li><a href="">Продукция</a></li>
-                        <li><a href="">Контакты</a></li>
-                        <li><a href="">+375 (33) 614 00 01</a></li>
+                        <li class="active"><a href="#begin" onclick="event.preventDefault()">Начало</a></li>
+                        <li><a href="#trimming" onclick="event.preventDefault()">Обрезка копыт</a></li>
+                        <li><a href="#production" onclick="event.preventDefault()">Продукция</a></li>
+                        <li><a href="#contacts" onclick="event.preventDefault()">Контакты</a></li>
+                        <li><a href="" onclick="event.preventDefault()">+375 (33) 614 00 01</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         <main>
-            <section class="begin">
+            <section class="begin" id="begin">
                 <div class="wrapper">
                     <div class="descr">
                         <h1>Онаграция</h1>
@@ -40,7 +42,7 @@
                     </div>
                 </div>
             </section>
-            <section class="hoof-trimming">
+            <section id="trimming" class="hoof-trimming">
                 <div class="wrapper">
                     <h3>Здоровые копыта ваших животных</h3>
                     <h2>Мы осуществляем лечение и функциональную обрезку копыт КРС по Беларуси и России с 2013 года.</h2>
@@ -77,7 +79,7 @@
                     </div>
                 </div>
             </section>
-            <section class="production">
+            <section id="production" class="production">
                 <div class="wrapper">
                     <h3>Наша продукция</h3>
                     <p>И мы ей очень гордимся</p>
@@ -114,7 +116,7 @@
                     </div>
                 </div>
             </section>
-            <section class="contacts">
+            <section id="contacts" class="contacts">
                 <div class="feed-wrap">
                     <h3>Заинтересовались?</h3>
                     <h2>Свяжитесь с нами!</h2>

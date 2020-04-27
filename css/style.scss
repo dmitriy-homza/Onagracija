@@ -92,6 +92,7 @@ body {
     color: $font-gray;
 }
 
+
 .scroll {
     scroll-snap-type: y proximity;
     overflow-y: scroll;
@@ -106,30 +107,51 @@ section, header, footer {
     position: fixed;
     width: 100%;
     z-index: -1;
-    left: 0;
-    right: 0;
+    top: -35px;
+    left: 50%;
+    transform: translate(-50%, 0);
     height: 3196px;
     width: 2600px;
     background-repeat: no-repeat;
-    transition: 2.0s;
-    transition-timing-function: cubic-bezier(0.58, 0.04, 0, 1.45);
+}
+
+@-moz-document url-prefix()
+{
+    .bg-svg {
+        position: absolute;
+        animation-name: moz;
+        animation-duration: 1.0s;
+    }
+}
+
+@keyframes moz {
+    form {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 #first {
     transition: 2.0s;
 }
 
-
 *::selection {
     background: #c1dcbf;
 }
 
 header {
+    top: 25px;
+    position: absolute;
+    width: 100%;
     display: flex;
     justify-content: center;
-    height: $header-height;
-
+    height: 65px;
     z-index: 2;
+    opacity: 1;
+    transition: 0.3s, top 0.0s;
 }
 
 header .wrapper {
@@ -138,6 +160,18 @@ header .wrapper {
     display: flex;
     justify-content: space-between;
 }
+
+
+.sticky {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: $light-gray;
+    margin-top: 0px;
+    opacity: 0.9;
+    transition: 0.3s, top 0.0s;
+    height: 65px;
+  }
 
 .logo {
     @extend %flex-center;
@@ -172,11 +206,10 @@ nav a {
     background-repeat: no-repeat;
     background-size: 0% 3px;
     padding-bottom: 6px;
-    transition: background-size 0.3s ease-in-out 0.2s;
+    transition: background-size 0.2s ease-in-out;
 }
 
-nav a:hover,
-nav a:focus {
+nav a:hover {
   background-size: 100% 3px;
   transition-delay: 0s;
 }
@@ -191,6 +224,11 @@ header li {
         text-decoration: none;
         color: $font-green;
     }
+}
+
+.active a{
+    background-size: 100% 3px;
+    transition-delay: 0s;
 }
 
 h1 {
@@ -222,6 +260,7 @@ h1 {
     justify-content: space-between;
     max-width: 1150px;
     padding: 0px 0px;
+    padding-top: 150px;
 }
 
 .descr {
@@ -272,7 +311,7 @@ button {
 }
 
 .hoof-trimming {
-    margin-top: 70px;
+    padding-top: 100px;
     display: flex;
     justify-content: center;
     .wrapper {
@@ -340,7 +379,7 @@ button {
 }
 
 .production {
-    margin-top: 40px;
+    padding-top: 80px;
     .wrapper {
         padding: 50px 0px;
         display: flex;
@@ -378,6 +417,7 @@ button {
 
     .slide {
         align-self: center;
+        height: 500px;
         h2 {
             text-align: center;
             text-transform: uppercase;
@@ -389,7 +429,7 @@ button {
             }
         }
         ul {
-            margin-top: 30px;
+            margin-top: 19px;
             li {
                 font-size: 18px;
                 list-style: none;
@@ -402,6 +442,10 @@ button {
             }
         }
     }
+}
+
+.production .slide-2 ul li {
+    margin-top: 27px;
 }
 
 .production .slide-2 h2 {
