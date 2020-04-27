@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .logo a, h1, .descr h3, .hoof-trimming .wrapper h3, .production h3, .production .slide h2 span, .production .slide-2 h2, .contacts h3, .contacts h5, .contacts .card > div h4, footer h2 {
   font-family: 'Moloko', 'Monotype Corsiva';
-  color: #60825b;
+  color: #2d5028;
 }
 
 .logo, nav, .begin .wrapper {
@@ -17,24 +17,24 @@
 
 @font-face {
   font-family: "Moloko";
-  src: url("/assets/fonts/Moloko.ttf");
+  src: url("../assets/fonts/Moloko.ttf");
 }
 
 @font-face {
   font-family: "Proba Pro";
-  src: url("/assets/fonts/ProbaPro-Regular.ttf");
+  src: url("../assets/fonts/ProbaPro-Regular.ttf");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Proba Pro";
-  src: url("/assets/fonts/ProbaPro-Light.ttf");
+  src: url("../assets/fonts/ProbaPro-Light.ttf");
   font-weight: 200;
 }
 
 @font-face {
   font-family: "Proba Pro";
-  src: url("ProbaPro-Medium.ttf");
+  src: url("../assets/fonts/ProbaPro-Medium.ttf");
   font-weight: 600;
 }
 
@@ -49,19 +49,19 @@ a:active, a:focus {
 }
 
 input::-moz-placeholder {
-  color: #60825b;
+  color: #2d5028;
 }
 
 input::-webkit-input-placeholder {
-  color: #60825b;
+  color: #2d5028;
 }
 
 textarea::-moz-placeholder {
-  color: #60825b;
+  color: #2d5028;
 }
 
 textarea::-webkit-input-placeholder {
-  color: #60825b;
+  color: #2d5028;
 }
 
 input, textarea {
@@ -97,7 +97,7 @@ textarea {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #60825b;
+  background: #2d5028;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -113,26 +113,44 @@ textarea {
 
 a {
   text-decoration: none;
-  color: #60825b;
+  color: #2d5028;
 }
 
 body {
   background-color: #f7f7f7;
-  background-position: 0% 0%;
-  background-size: 100%;
-  background-repeat: no-repeat;
+  overflow-x: hidden;
   color: #656565;
 }
 
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
+.scroll {
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
+  overflow-y: scroll;
+  max-height: 100vh;
+}
+
+section, header, footer {
+  scroll-snap-align: start;
+}
+
+.bg-svg {
+  position: fixed;
+  width: 100%;
   z-index: -1;
   left: 0;
   right: 0;
-  background-position: 51% 102%;
-  background-size: 100%;
+  height: 3196px;
+  width: 2600px;
+  background-repeat: no-repeat;
+  -webkit-transition: 2.0s;
+  transition: 2.0s;
+  -webkit-transition-timing-function: cubic-bezier(0.58, 0.04, 0, 1.45);
+          transition-timing-function: cubic-bezier(0.58, 0.04, 0, 1.45);
+}
+
+#first {
+  -webkit-transition: 2.0s;
+  transition: 2.0s;
 }
 
 *::-moz-selection {
@@ -166,7 +184,7 @@ header .wrapper {
 }
 
 .logo a {
-  color: #60825b;
+  color: #2d5028;
   text-decoration: none;
   font-size: 40px;
   -ms-flex-item-align: center;
@@ -188,7 +206,7 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #60825b;
+  color: #2d5028;
   text-decoration: none;
   display: inline;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, transparent), color-stop(21%, currentColor));
@@ -219,18 +237,7 @@ header li:last-child {
 
 header li a {
   text-decoration: none;
-  color: #60825b;
-}
-
-main {
-  margin: 0px auto;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
-}
-
-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
+  color: #2d5028;
 }
 
 h1 {
@@ -241,6 +248,7 @@ h1 {
 .begin {
   background-size: cover;
   margin: 0px auto;
+  height: 800px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -256,8 +264,8 @@ h1 {
 }
 
 .begin button:hover {
-  -webkit-box-shadow: -1px -1px white, -2px -2px white, -3px -3px white, -4px -4px #60825b;
-          box-shadow: -1px -1px white, -2px -2px white, -3px -3px white, -4px -4px #60825b;
+  -webkit-box-shadow: -1px -1px white, -2px -2px white, -3px -3px white, -4px -4px #2d5028;
+          box-shadow: -1px -1px white, -2px -2px white, -3px -3px white, -4px -4px #2d5028;
   -webkit-transform: translateX(4px);
   transform: translateX(4px);
   -webkit-transition: 0.3s;
@@ -268,7 +276,6 @@ h1 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: calc(100vh - 100px);
   max-width: 1150px;
   padding: 0px 0px;
 }
@@ -303,7 +310,7 @@ button {
   padding: 10px;
   border-radius: 15px;
   border: none;
-  color: #60825b;
+  color: #2d5028;
   width: 150px;
   font-size: 20px;
   text-transform: uppercase;
@@ -326,7 +333,7 @@ button {
 
 .img .respo-img {
   width: 700px;
-  background-image: url(/assets/img/grass.png);
+  background-image: url(../assets/img/grass.png);
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: 50%;
@@ -380,7 +387,7 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-image: url(/assets/img/cow.png);
+  background-image: url(../assets/img/cow.png);
   background-size: 422px;
   background-repeat: no-repeat;
   background-position-x: 49%;
@@ -407,7 +414,7 @@ button {
       -ms-grid-row-align: center;
       align-self: center;
   margin-left: 10px;
-  color: #60825b;
+  color: #2d5028;
   font-size: 20px;
   font-weight: 500;
 }
@@ -504,7 +511,7 @@ button {
 .production .slide ul li {
   font-size: 18px;
   list-style: none;
-  background-image: url(/assets/img/icon.svg);
+  background-image: url(../assets/img/icon.svg);
   background-size: 20px;
   background-position-y: 50%;
   background-repeat: no-repeat;
@@ -638,7 +645,7 @@ button {
 
 .contacts h5 {
   font-size: 45px;
-  color: #60825b;
+  color: #2d5028;
   text-align: center;
 }
 
@@ -699,7 +706,7 @@ button {
   background: none;
   border: none;
   border-bottom: 5px solid white;
-  color: #60825b;
+  color: #2d5028;
   font-size: 20px;
   margin-top: 10px;
 }
@@ -898,7 +905,7 @@ footer > div {
 
 .clock {
   border-radius: 60px;
-  border: 3px solid #60825b;
+  border: 3px solid #2d5028;
   height: 80px;
   width: 80px;
   position: relative;
@@ -913,14 +920,14 @@ footer > div {
   top: 100px;
   right: 60px;
   width: 400px;
-  color: #60825b;
+  color: #2d5028;
   font-weight: 500;
 }
 
 .clock:after {
   content: "";
   position: absolute;
-  background-color: #60825b;
+  background-color: #2d5028;
   top: 2px;
   left: 48%;
   height: 38px;
@@ -955,7 +962,7 @@ footer > div {
 .clock:before {
   content: "";
   position: absolute;
-  background-color: #60825b;
+  background-color: #2d5028;
   top: 6px;
   left: 48%;
   height: 35px;
