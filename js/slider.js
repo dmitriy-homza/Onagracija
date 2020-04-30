@@ -72,7 +72,7 @@ document.querySelector('.burger-overflow-hidden').addEventListener('click', func
 
 function isBurger () {
   burgerIcon.classList.add('rotate');
-  document.querySelector('.logo').classList.add('opacity');
+  setTimeout(() => document.querySelector('.logo').classList.add('opacity'),00);
   document.querySelector('nav').classList.add('menu-active');
   document.querySelector('.burger-overflow-hidden').classList.add('burger-overflow-animation');
   setTimeout(() => document.querySelector('.burger-overflow-hidden').classList.add('burger-overflow'),100);
@@ -81,7 +81,7 @@ function isBurger () {
 function isNotBurger () {
   burgerIcon.classList.remove('rotate');
   document.querySelector('nav').classList.remove('menu-active');
-  document.querySelector('.logo').classList.remove('opacity');
+  setTimeout(() => document.querySelector('.logo').classList.remove('opacity'),300);
   document.querySelector('.burger-overflow-hidden').classList.remove('burger-overflow');
   setTimeout(() => document.querySelector('.burger-overflow-animation').classList.remove('burger-overflow-animation'),500);
 }
