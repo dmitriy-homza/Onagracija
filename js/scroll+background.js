@@ -63,6 +63,7 @@ window.onscroll = function() {
   let oddNavLink = document.querySelector('nav ul').children;
   for (i=0; i<oddNavLink.length; i++) {
     oddNavLink[i].addEventListener('click', function(){
+    isNotBurger();  
     document.querySelector('nav li.active').classList.remove('active');
     this.classList.add('active');
     let blockID = this.querySelector('a').getAttribute('href').substr(1);

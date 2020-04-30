@@ -54,99 +54,34 @@ document.querySelector('.right').addEventListener('click', function() {
   }
 });
 
+//Бургер
+let burgerIcon = document.querySelector('header img');
+burgerIcon.addEventListener('click', function() {
+  if (burgerIcon.getAttribute('class')=='rotate') {
+    isNotBurger();
+  }
+  else {
+    isBurger();
+  }
 
-if (isEnabled) {
-	
+})
+
+document.querySelector('.burger-overflow-hidden').addEventListener('click', function() {
+  isNotBurger();
+});
+
+function isBurger () {
+  burgerIcon.classList.add('rotate');
+  document.querySelector('.logo').classList.add('opacity');
+  document.querySelector('nav').classList.add('menu-active');
+  document.querySelector('.burger-overflow-hidden').classList.add('burger-overflow-animation');
+  setTimeout(() => document.querySelector('.burger-overflow-hidden').classList.add('burger-overflow'),100);
 }
 
-
-
-
-  const swipedetect = (el) => {
-  
-	let surface = el;
-	let startX = 0;
-	let startY = 0;
-	let distX = 0;
-	let distY = 0;
-	let startTime = 0;
-	let elapsedTime = 0;
-
-	let threshold = 150;
-	let restraint = 100;
-	let allowedTime = 300;
-
-	surface.addEventListener('mousedown', function(e){
-		startX = e.pageX;
-		startY = e.pageY;
-		startTime = new Date().getTime();
-		e.preventDefault();
-	}, false);
-
-	surface.addEventListener('mouseup', function(e){
-		distX = e.pageX - startX;
-		distY = e.pageY - startY;
-		elapsedTime = new Date().getTime() - startTime;
-		if (elapsedTime <= allowedTime){
-			if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){
-				if ((distX > 0)) {
-					if (isEnabled) {
-						previousItem(currentItem);
-					}
-				} else {
-					if (isEnabled) {
-						nextItem(currentItem);
-					}
-				}
-			}
-		}
-		e.preventDefault();
-	}, false);
-
-	surface.addEventListener('touchstart', function(e){
-		if (e.target.classList.contains('arrow') || e.target.classList.contains('control')) {
-			if (e.target.classList.contains('left')) {
-				if (isEnabled) {
-					previousItem(currentItem);
-				}
-			} else {
-				if (isEnabled) {
-					nextItem(currentItem);
-				}
-			}
-		}
-			var touchobj = e.changedTouches[0];
-			startX = touchobj.pageX;
-			startY = touchobj.pageY;
-			startTime = new Date().getTime();
-			e.preventDefault();
-	}, false);
-
-	surface.addEventListener('touchmove', function(e){
-			e.preventDefault();
-	}, false);
-
-	surface.addEventListener('touchend', function(e){
-			var touchobj = e.changedTouches[0];
-			distX = touchobj.pageX - startX;
-			distY = touchobj.pageY - startY;
-			elapsedTime = new Date().getTime() - startTime;
-			if (elapsedTime <= allowedTime){
-					if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){
-							if ((distX > 0)) {
-								if (isEnabled) {
-									previousItem(currentItem);
-								}
-							} else {
-								if (isEnabled) {
-									nextItem(currentItem);
-								}
-							}
-					}
-			}
-			e.preventDefault();
-	}, false);
+function isNotBurger () {
+  burgerIcon.classList.remove('rotate');
+  document.querySelector('nav').classList.remove('menu-active');
+  document.querySelector('.logo').classList.remove('opacity');
+  document.querySelector('.burger-overflow-hidden').classList.remove('burger-overflow');
+  setTimeout(() => document.querySelector('.burger-overflow-animation').classList.remove('burger-overflow-animation'),500);
 }
-
-var el = document.querySelector('.slider');
-swipedetect(el);

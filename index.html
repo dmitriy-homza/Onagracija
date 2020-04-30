@@ -16,6 +16,8 @@
             <div class="wrapper">
                 <div class="logo"><a href="">Онаграция</a></div>
                 <nav>
+                    <div class="burger-overflow-hidden"></div>
+                    <div class="logo-burger"><h2>Онаграция</h2></div>
                     <ul>
                         <li class="active"><a href="#begin" onclick="event.preventDefault()">Начало</a></li>
                         <li><a href="#trimming" onclick="event.preventDefault()">Обрезка копыт</a></li>
@@ -24,6 +26,7 @@
                         <li><a href="" onclick="event.preventDefault()">+375 (33) 614 00 01</a></li>
                     </ul>
                 </nav>
+                <img src="/assets/img/Burger-menu-icon.svg" alt="Кнопка навигации">
             </div>
         </header>
         <main>
@@ -76,6 +79,34 @@
                             </div>
                             <p>После выполнения работ наши специалисты предоставляют описи здоровых и больных животных с детальным описанием заболеваний по каждому копыту.</p>
                         </div>
+                        <div class="tabs">
+                            <div class="tab">
+                              <input type="radio" id="rd1" name="rd" checked>
+                              <label class="tab-label" for="rd1">Квалифицированные специалисты</label>
+                              <div class="tab-content">
+                                  Штат сотрудников фирмы укомплектован ветеринарными врачами с высшим ветеринарным образованием и большим стажем работы. Специалисты постоянно совершенствуют свои навыки и методики.
+                              </div>
+                            </div>
+                            <div class="tab">
+                              <input type="radio" id="rd2" name="rd">
+                              <label class="tab-label" for="rd2">Дезинфекция</label>
+                              <div class="tab-content">
+                                  Уделяем важную роль мойке и дезинфекции оборудования. После каждого выезда в хозяйство станок и инструменты моются и дезинфицируются!
+                              </div>
+                            </div>
+                            <div class="tab">
+                              <input type="radio" id="rd3" name="rd">
+                              <label class="tab-label" for="rd3">Современное оборудование</label>
+                              <div class="tab-content">
+                                  В своей работе используем полуавтоматический станок для обрезки копыт у КРС собственного производства для оптимизации условий труда и роста производительности, что снижает стресс у КРС за счет времени воздействия и как следствие позволяет добиться минимальных потерь молока.                                    </div>
+                            </div>
+                            <div class="tab">
+                              <input type="radio" id="rd4" name="rd">
+                              <label class="tab-label" for="rd4">Отчет о проделанной работе</label>
+                              <div class="tab-content">
+                                  После выполнения работ наши специалисты предоставляют описи здоровых и больных животных с детальным описанием заболеваний по каждому копыту.                                    </div>
+                            </div>
+                          </div>
                     </div>
                 </div>
             </section>
@@ -137,7 +168,7 @@
                                         <a href="" class="email">onagracij@mail.ru</a>
                                     </div>
                                 </div>
-                                <!-- <iframe src="https://yandex.by/map-widget/v1/-/CCQeERkF" width="50%" height="100%" frameborder="1" allowfullscreen="true"></iframe>          -->          
+                                <iframe src="https://yandex.by/map-widget/v1/-/CCQeERkF" width="50%" height="100%" frameborder="1" allowfullscreen="true"></iframe>         
                             </div>          
                         </div>
                         <div class="send">
@@ -162,7 +193,7 @@
         <div id="preloader">   
             <div class="clock"><h2>Маркируем бычков...</h2></div>     
         </div>
-<script src="js/preloader.js"></script>
+<script src="js/preloader+nav.js"></script>
 <script src="js/slider.js"></script>
 <script src="js/scroll+background.js"></script>
 </body>
