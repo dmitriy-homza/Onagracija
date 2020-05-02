@@ -1239,8 +1239,8 @@ footer {
                 width: 13px;
             }
         .shower {
-            height: auto;
-
+            min-height: 294px;
+            height: calc(100vw - 20px);
             .slide-2 {
                 .desription {
                     h2 {
@@ -1252,9 +1252,10 @@ footer {
                 flex-direction: column;
                 justify-content: center;
                 padding-bottom: 0px;
-                height: auto;
+                height: inherit;
                 img {
                     width: 100%;
+                    max-width: 320px;
                 }
             }
                 .desription {
@@ -1270,7 +1271,43 @@ footer {
     }
         }
     .contacts {
-        display: none;
+        .feed-wrap {
+            width: calc(100% - 30px);
+            h3 {
+                font-size: 30px;
+            }
+            h2 {
+                font-size: 14px;
+            }
+            .wrapper {
+                .call {
+                    width: 100%;
+                    .card {
+                        height: auto;
+                        flex-direction: column;
+                    }
+                    iframe {
+                        width: 100%;
+                        border-bottom-left-radius: 27px;
+                        border-bottom-right-radius: 27px;
+                    }
+                    .card > div {
+                        width: 100%;
+                        box-sizing: border-box;
+                        padding: 45px 15px;
+                        p {
+                            margin-top: 30px;
+                        }
+                        .numail {
+                            margin-top: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        margin-top: 20px;
     }
 }
 
@@ -1304,6 +1341,20 @@ footer {
     }
 }
 
+@media only screen and (min-width: 420px) and (max-width: 768px) {
+    .hoof-trimming .wrapper .features {
+        background-size: 55%;
+        background-position-x: 50%;
+    } 
+
+    .hoof-trimming .wrapper .tabs {
+        padding-top: calc(76vw - 193px);
+    }
+
+    .production .slider .shower {
+        height: 445px;
+    }
+}
 
 @media only screen and (max-width: 375px) {
     .begin {

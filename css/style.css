@@ -1482,7 +1482,8 @@ input:checked ~ .tab-content {
     width: 13px;
   }
   .production .slider .shower {
-    height: auto;
+    min-height: 294px;
+    height: calc(100vw - 20px);
   }
   .production .slider .shower .slide-2 .desription h2 {
     font-size: 35px;
@@ -1496,10 +1497,11 @@ input:checked ~ .tab-content {
         -ms-flex-pack: center;
             justify-content: center;
     padding-bottom: 0px;
-    height: auto;
+    height: inherit;
   }
   .production .slider .shower .slide img {
     width: 100%;
+    max-width: 320px;
   }
   .production .slider .shower .desription {
     margin: 0px;
@@ -1510,8 +1512,44 @@ input:checked ~ .tab-content {
   .production .slider .shower .desription ul {
     display: none;
   }
-  .contacts {
-    display: none;
+  .contacts .feed-wrap {
+    width: calc(100% - 30px);
+  }
+  .contacts .feed-wrap h3 {
+    font-size: 30px;
+  }
+  .contacts .feed-wrap h2 {
+    font-size: 14px;
+  }
+  .contacts .feed-wrap .wrapper .call {
+    width: 100%;
+  }
+  .contacts .feed-wrap .wrapper .call .card {
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contacts .feed-wrap .wrapper .call iframe {
+    width: 100%;
+    border-bottom-left-radius: 27px;
+    border-bottom-right-radius: 27px;
+  }
+  .contacts .feed-wrap .wrapper .call .card > div {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 45px 15px;
+  }
+  .contacts .feed-wrap .wrapper .call .card > div p {
+    margin-top: 30px;
+  }
+  .contacts .feed-wrap .wrapper .call .card > div .numail {
+    margin-top: 0px;
+  }
+  footer {
+    margin-top: 20px;
   }
 }
 
@@ -1536,6 +1574,19 @@ input:checked ~ .tab-content {
   .begin .descr button {
     font-size: 15px;
     width: 120px;
+  }
+}
+
+@media only screen and (min-width: 420px) and (max-width: 768px) {
+  .hoof-trimming .wrapper .features {
+    background-size: 55%;
+    background-position-x: 50%;
+  }
+  .hoof-trimming .wrapper .tabs {
+    padding-top: calc(76vw - 193px);
+  }
+  .production .slider .shower {
+    height: 445px;
   }
 }
 
