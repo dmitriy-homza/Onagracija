@@ -1394,6 +1394,9 @@ input:checked ~ .tab-content {
 }
 
 @media only screen and (max-width: 768px) {
+  body > svg {
+    display: none;
+  }
   header {
     top: 0px;
   }
