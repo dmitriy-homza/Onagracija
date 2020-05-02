@@ -1280,7 +1280,7 @@ input:checked ~ .tab-content {
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1020px) {
   header .wrapper {
     margin: 0px;
     padding: 0px 30px;
@@ -1393,7 +1393,10 @@ input:checked ~ .tab-content {
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
+  header {
+    top: 0px;
+  }
   .bg-svg {
     left: 54%;
     top: 11%;
@@ -1409,11 +1412,15 @@ input:checked ~ .tab-content {
   .begin .img {
     position: absolute;
     z-index: -1;
-    right: 0px;
-    top: 100px;
+    right: -48px;
+    overflow: hidden;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    top: 94px;
   }
   .begin .descr {
-    width: 100%;
+    width: calc(100% - 43px);
   }
   .begin .descr p {
     font-size: 16px;
