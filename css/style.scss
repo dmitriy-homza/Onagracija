@@ -306,10 +306,13 @@ h1 {
         padding-top: 8px;
         font-size: 20px;
     }
+
+    a {
+        margin-top: 40px;
+    }
 }
 
 button {
-    margin-top: 40px;
     background-color: $bg-green;
     padding: 10px;
     border-radius: 15px;
@@ -704,14 +707,14 @@ footer {
         width: 1em;
         height: 1em;
         text-align: center;
-        transition: all .35s;
+        transition: all .2s;
       }
     }
     &-content {
       max-height: 0;
       padding: 0 1em;
       background: white;
-      transition: all .35s;
+      transition: all .2s;
     }
   }
   
@@ -1149,6 +1152,14 @@ footer {
     }
     header {
         top: 0px;
+        .logo {
+            a {
+                font-size: 30px;
+            }
+        }
+        img {
+            width: 25px;
+        }
     }
     .bg-svg {
         left: 54%;
@@ -1160,15 +1171,21 @@ footer {
         height: auto;
         justify-content: start;
         .img {
-            position: absolute;
+            
+            width: 135%;
+            position: relative;
             z-index: -1;
-            right: -48px;
+            right: calc(-12px - 1vw);
             overflow: hidden;
             align-items: start;
-            top: 94px;
+            top: calc(-15px + 3vw);
+            .respo-img {
+                width: calc(370 * 100vw / 768);
+            }
         }
         .descr {
             width: calc(100% - 43px);
+            margin-bottom: 0px;
             p {
                 font-size: 16px;
             }
@@ -1177,7 +1194,7 @@ footer {
             padding: 220px 58px 0px 24px;
             padding-top: 20px;
             margin-top: 100px;
-
+            padding-left: calc(15 *1.5 * 200vw / 500);
         }
         h1 {
             font-size: 50px;
@@ -1191,7 +1208,127 @@ footer {
         h2 {
             font-size: 16px;
         }
+    }  
+    .hoof-trimming {
+        .wrapper {
+            max-width: calc(100vw - 40px);
+            .features {
+                background-size: 100%;
+                margin-top: 0px;
+                padding-top: 40px;
+            }
+            h3 {
+                font-size: 30px;
+            }
+            h2 {
+                width: inherit;
+                font-size: 14px;
+            }
+            .tabs {
+                width: 100%;
+                padding: 0px;
+                padding-top: calc(100vw - 80px);
+                
+            }
+        }
     }
+    .production {
+    .slider {
+            margin-top: 0px;
+            .left, .right {
+                width: 13px;
+            }
+        .shower {
+            height: auto;
 
+            .slide-2 {
+                .desription {
+                    h2 {
+                        font-size: 35px;
+                    }
+                }
+            }
+            .slide {
+                flex-direction: column;
+                justify-content: center;
+                padding-bottom: 0px;
+                height: auto;
+                img {
+                    width: 100%;
+                }
+            }
+                .desription {
+                    margin: 0px;
+                    h2 {
+                        font-size: 13px;
+                    }
+                    ul {
+                        display: none;
+                    }
+                }
+            }
+    }
+        }
+    .contacts {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 639px) {
+.begin {
+    h3 {
+        font-size: 37px;
+    }
+}
+}
+
+@media only screen and (max-width: 590px) {
+    .begin {
+        .descr {
+            h3 {
+                font-size: 25px;
+                display: none;
+            }
+            p {
+                padding-top: 4px;
+                display: none;
+            }
+            a {
+                margin-top: 25px;
+            }
+            button {
+                font-size: 15px;
+                width: 120px;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 375px) {
+    .begin {
+        .wrapper {
+            margin-top: 80px;
+        }
+        h1 {
+            font-size: 35px;
+        }
     
+        h3 {
+            font-size: 25px;
+            display: none;
+        }
+        .descr {
+            p {
+                padding-top: 4px;
+                display: none;
+            }
+        }
+        .img {
+            img {
+                width: 180px;
+                top: 113px;
+            }
+        }
+    }
 }
