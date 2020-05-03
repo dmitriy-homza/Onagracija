@@ -1148,8 +1148,19 @@ footer {
 
 @media only screen and (max-width: 768px) {
     body > svg {
-        display: none;
+        //display: none;
+        bottom: -75%;
+        top: inherit;
     }
+
+    .bg-svg {
+        left: 54%;
+        bottom: -175%;
+        height: 329%;
+        width: 200%;
+        top: inherit;
+    }
+
     header {
         top: 0px;
         .logo {
@@ -1160,12 +1171,6 @@ footer {
         img {
             width: 25px;
         }
-    }
-    .bg-svg {
-        left: 54%;
-        top: 11%;
-        height: 1150px;
-        width: 1500px;
     }
     .begin {
         height: auto;
