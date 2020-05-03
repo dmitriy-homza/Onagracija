@@ -1637,4 +1637,47 @@ input:checked ~ .tab-content {
     top: 113px;
   }
 }
+
+.trimming {
+  background-size: 129%;
+  padding-top: 115px;
+  height: 476px;
+  background-image: url(../assets/img/bg/trim-head.svg);
+  background-repeat: no-repeat;
+  background-position-y: 100%;
+  background-position-x: center;
+}
+
+.trimming .wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.trimming .wrapper img {
+  margin-right: 18%;
+}
+
+.trimming .wrapper .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.trimming .wrapper h2 {
+  margin-top: 20px;
+}
 /*# sourceMappingURL=style.css.map */

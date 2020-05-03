@@ -1416,3 +1416,38 @@ footer {
         }
     }
 }
+
+//Trimming
+
+.trimming-header {
+    a {
+
+    }
+}
+.trimming {
+    background-size: 129%;
+    padding-top: 115px;
+    height: 476px;
+    background-image: url(../assets/img/bg/trim-head.svg);
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: center;
+    .wrapper {
+       max-width: 1200px;
+       margin-left: auto;
+       margin-right: auto;
+       display: flex;  
+       justify-content: space-between;
+       img {
+           margin-right: 18%;
+       }
+       .container {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+       }
+       h2 {
+           margin-top: 20px;
+       }
+    }
+}
