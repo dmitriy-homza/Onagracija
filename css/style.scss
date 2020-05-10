@@ -13,6 +13,10 @@ $clouds: #ecf0f1;
     color: $font-green;
 }
 
+%font-montserrat {
+    font-family: 'Montserrat', 'Times New Roman', Times, serif;
+}
+
 %flex-center {
     display: flex;
     align-content: center;
@@ -40,6 +44,30 @@ $clouds: #ecf0f1;
     font-family: "Proba Pro";
     src: url("../assets/fonts/ProbaPro-Medium.ttf");
     font-weight: 600;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/fonts/Montserrat-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/fonts/Montserrat-Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/fonts/Montserrat-SemiBold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/fonts/Montserrat-Medium.ttf");
+    font-weight: 500;
 }
 
 input::-webkit-outer-spin-button,
@@ -1424,30 +1452,172 @@ footer {
 
     }
 }
-.trimming {
-    background-size: 129%;
-    padding-top: 115px;
-    height: 476px;
+
+.trimming-body {
+    background-size: 203%;
+    height: 513px;
     background-image: url(../assets/img/bg/trim-head.svg);
     background-repeat: no-repeat;
-    background-position-y: 100%;
+    background-position-y: 112%;
     background-position-x: center;
+    background-color: #c1dcbd;
+}
+
+.trimming {
+
     .wrapper {
        max-width: 1200px;
        margin-left: auto;
        margin-right: auto;
        display: flex;  
-       justify-content: space-between;
+       flex-direction: column;
        img {
-           margin-right: 18%;
+           padding-left: 90px;
        }
-       .container {
+       .trimming-header {
            display: flex;
-           flex-direction: column;
-           justify-content: center;
+           justify-content: space-between;
+           max-width: 1100px;
+           margin: 0px auto;
+           margin-top: 110px;
+           .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 600px;
+        }
+       }
+       h5 {
+           margin-top: 150px;
+           @extend %font-moloko;
+           font-size: 45px;
+       }
+       .targets {
+           margin: 0 auto;
+            margin-top: 50px;
+           display: flex;
+           justify-content: space-between;
+           width: 100%;
+           height: 290px;
+           align-items: center;
+           .target:hover {
+               height: 260px;
+               transition: 0.3s;
+           }
+           .target {
+            max-width: 340px;
+             display: flex;
+             margin: 0px 5px;
+             background-color: white;
+             border-radius: 20px;
+             padding: 15px;
+             transition: 0.5s;
+             height: 160px;
+                .target-discription {
+                    margin-left: 20px;
+                    h2 {
+                        position: relative;
+                        top: 35px;
+                        font-size: 20px;
+                        transition: 0.5s;
+                        font-weight: 600;
+                        @extend %font-montserrat;
+                    }
+                    p {
+                        transition: 0.2s;
+                        margin-top: 15px;
+                        opacity: 0;
+                        text-align: justify;
+                        -moz-hyphens: auto;
+                        -webkit-hyphens: auto;
+                        -ms-hyphens: auto;
+                    }
+                
+                }
+                svg {
+                    width: 835px;
+                    margin-bottom: 30px;
+                }
+
+           }
        }
        h2 {
-           margin-top: 20px;
+        margin-top: 10px;
        }
+
     }
 }
+
+
+
+//CSS Анимации
+
+#Head, #tail {
+    transition: 0.9s;
+}
+
+.target:hover #Head {
+    transition: 0.9s;
+    transform: translate(-8px, 83px) rotate(-20deg);
+}
+
+.target:hover #tail {
+    transition: 0.9s;
+    transform: rotate(5deg) translate(13px, -2px);
+}
+
+.target:hover p {
+    transition: 0.5s;
+    opacity: 1 !important;
+}
+
+.target:hover h2 {
+    top: 0px !important;
+    transition: 0.5s;
+    color: $font-green;
+}
+
+#left-door, #right-door, .target #Слой_1 .st19, .target #display > path {
+    transition: 0.4s;
+}
+
+#right-door {
+    transform-origin: 37% 51%;
+}
+
+#left-door {
+    transform-origin: 12% 50%;
+}
+
+.target:hover #left-door {
+    transition: 0.4s;
+    transform: scale(-1, 1) translate(0px, 0px) !important;
+    transform-origin: 12% 50%;
+}
+
+.target:hover #right-door {
+    transition: 0.4s;
+    transform: skew(0deg, -50deg);
+}
+
+.target:hover #display > path, .target:hover #Слой_1 .st19 {
+    transition: 0.4s;
+    fill: #2c6d22  !important;
+}
+
+.target:hover #glass {
+    transition: 0.4s;
+    transform: scale(1.1) translate(-10px, -30px);
+}
+
+.target:hover #bottle {
+    transition: 0.4s;
+    transform: scale(1.2) translate(-10px, -40px);
+}
+
+#glass, #bottle {
+    transition: 0.4s;
+}
+
+
+

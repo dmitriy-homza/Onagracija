@@ -1,7 +1,11 @@
 @charset "UTF-8";
-.logo a, h1, .descr h3, .hoof-trimming .wrapper h3, .production h3, .production .slide h2 span, .production .slide-2 h2, .contacts h3, .contacts h5, .contacts .card > div h4, footer h2, .clock h2 {
+.logo a, h1, .descr h3, .hoof-trimming .wrapper h3, .production h3, .production .slide h2 span, .production .slide-2 h2, .contacts h3, .contacts h5, .contacts .card > div h4, footer h2, .clock h2, .trimming .wrapper h5 {
   font-family: 'Moloko', 'Monotype Corsiva';
   color: #2d5028;
+}
+
+.trimming .wrapper .targets .target .target-discription h2 {
+  font-family: 'Montserrat', 'Times New Roman', Times, serif;
 }
 
 .logo, nav, .begin .wrapper {
@@ -36,6 +40,30 @@
   font-family: "Proba Pro";
   src: url("../assets/fonts/ProbaPro-Medium.ttf");
   font-weight: 600;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Medium.ttf");
+  font-weight: 500;
 }
 
 input::-webkit-outer-spin-button,
@@ -1638,14 +1666,14 @@ input:checked ~ .tab-content {
   }
 }
 
-.trimming {
-  background-size: 129%;
-  padding-top: 115px;
-  height: 476px;
+.trimming-body {
+  background-size: 203%;
+  height: 513px;
   background-image: url(../assets/img/bg/trim-head.svg);
   background-repeat: no-repeat;
-  background-position-y: 100%;
+  background-position-y: 112%;
   background-position-x: center;
+  background-color: #c1dcbd;
 }
 
 .trimming .wrapper {
@@ -1655,16 +1683,29 @@ input:checked ~ .tab-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .trimming .wrapper img {
-  margin-right: 18%;
+  padding-left: 90px;
 }
 
-.trimming .wrapper .container {
+.trimming .wrapper .trimming-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1100px;
+  margin: 0px auto;
+  margin-top: 110px;
+}
+
+.trimming .wrapper .trimming-header .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1675,9 +1716,168 @@ input:checked ~ .tab-content {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  max-width: 600px;
+}
+
+.trimming .wrapper h5 {
+  margin-top: 150px;
+  font-size: 45px;
+}
+
+.trimming .wrapper .targets {
+  margin: 0 auto;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 290px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.trimming .wrapper .targets .target:hover {
+  height: 260px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.trimming .wrapper .targets .target {
+  max-width: 340px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px 5px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 15px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  height: 160px;
+}
+
+.trimming .wrapper .targets .target .target-discription {
+  margin-left: 20px;
+}
+
+.trimming .wrapper .targets .target .target-discription h2 {
+  position: relative;
+  top: 35px;
+  font-size: 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-weight: 600;
+}
+
+.trimming .wrapper .targets .target .target-discription p {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  margin-top: 15px;
+  opacity: 0;
+  text-align: justify;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.trimming .wrapper .targets .target svg {
+  width: 835px;
+  margin-bottom: 30px;
 }
 
 .trimming .wrapper h2 {
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+#Head, #tail {
+  -webkit-transition: 0.9s;
+  transition: 0.9s;
+}
+
+.target:hover #Head {
+  -webkit-transition: 0.9s;
+  transition: 0.9s;
+  -webkit-transform: translate(-8px, 83px) rotate(-20deg);
+          transform: translate(-8px, 83px) rotate(-20deg);
+}
+
+.target:hover #tail {
+  -webkit-transition: 0.9s;
+  transition: 0.9s;
+  -webkit-transform: rotate(5deg) translate(13px, -2px);
+          transform: rotate(5deg) translate(13px, -2px);
+}
+
+.target:hover p {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 1 !important;
+}
+
+.target:hover h2 {
+  top: 0px !important;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #2d5028;
+}
+
+#left-door, #right-door, .target #Слой_1 .st19, .target #display > path {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#right-door {
+  -webkit-transform-origin: 37% 51%;
+          transform-origin: 37% 51%;
+}
+
+#left-door {
+  -webkit-transform-origin: 12% 50%;
+          transform-origin: 12% 50%;
+}
+
+.target:hover #left-door {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: scale(-1, 1) translate(0px, 0px) !important;
+          transform: scale(-1, 1) translate(0px, 0px) !important;
+  -webkit-transform-origin: 12% 50%;
+          transform-origin: 12% 50%;
+}
+
+.target:hover #right-door {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: skew(0deg, -50deg);
+          transform: skew(0deg, -50deg);
+}
+
+.target:hover #display > path, .target:hover #Слой_1 .st19 {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  fill: #2c6d22  !important;
+}
+
+.target:hover #glass {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: scale(1.1) translate(-10px, -30px);
+          transform: scale(1.1) translate(-10px, -30px);
+}
+
+.target:hover #bottle {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: scale(1.2) translate(-10px, -40px);
+          transform: scale(1.2) translate(-10px, -40px);
+}
+
+#glass, #bottle {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 /*# sourceMappingURL=style.css.map */
