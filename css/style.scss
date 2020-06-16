@@ -725,6 +725,7 @@ footer {
       background: $bg-gray;
       font-weight: bold;
       cursor: pointer;
+      transition: 0.3s;
       /* Icon */
       &:hover {
         background: darken($bg-green, 10%);
@@ -735,14 +736,14 @@ footer {
         width: 1em;
         height: 1em;
         text-align: center;
-        transition: all .2s;
+        transition: all .4s;
       }
     }
     &-content {
       max-height: 0;
       padding: 0 1em;
       background: white;
-      transition: all .2s;
+      transition: all .4s;
     }
   }
   
@@ -1060,6 +1061,47 @@ footer {
         max-width: 1150px;
     }
 
+    
+    //Тримминг
+    .trimming-body {
+        background-position-y: 0% !important;
+        .trimming {
+            .wrapper {
+                .trimming-header {
+                    padding: 0px 20px;
+                    .container {
+                        padding-bottom: 20px;
+                        h1 {
+                            font-size: 70px;
+                        }
+                        h2 {
+                            font-size: 20px;
+                        }
+                    }
+                    img {
+                        height: 250px;
+                        width: 250px;
+                        padding-left: 50px;
+                    }
+                }
+                .targets {
+                    width: calc(100% - 100px);
+                    margin: 20px 50px;
+                    flex-wrap: wrap;
+                    height: auto;
+                    .target {
+                        max-width: inherit;
+                        width: 100%;
+                        margin: 10px 0px;
+                        &:hover {
+                            height: 140px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
 }
 
 
@@ -1447,11 +1489,6 @@ footer {
 
 //Trimming
 
-.trimming-header {
-    a {
-
-    }
-}
 
 .trimming-body {
     background-size: 203%;
@@ -1461,10 +1498,27 @@ footer {
     background-position-y: 112%;
     background-position-x: center;
     background-color: #c1dcbd;
+    footer {
+        margin-top: 0px;
+    }
 }
 
 .trimming {
-
+    .wrapper {
+        .tabs {
+            display: block;
+            margin-right: auto;
+            margin-top: 40px;
+            height: 420px;
+            .tab {
+                transition: 0.2s;
+            }
+            h2 {
+                margin-top: 0px;
+                font-weight: 800;
+            }
+    }
+    }
     .wrapper {
        max-width: 1200px;
        margin-left: auto;
@@ -1485,12 +1539,17 @@ footer {
             flex-direction: column;
             justify-content: center;
             max-width: 600px;
+            text-align: left;
         }
        }
        h5 {
            margin-top: 150px;
            @extend %font-moloko;
            font-size: 45px;
+       }
+
+       .targets + h5, .tabs + h5 {
+           margin-top: 50px;
        }
        .targets {
            margin: 0 auto;
@@ -1528,9 +1587,6 @@ footer {
                         margin-top: 15px;
                         opacity: 0;
                         text-align: justify;
-                        -moz-hyphens: auto;
-                        -webkit-hyphens: auto;
-                        -ms-hyphens: auto;
                     }
                 
                 }
@@ -1544,12 +1600,288 @@ footer {
        h2 {
         margin-top: 10px;
        }
+    }
+}
 
+.trim-form {
+    background-image: url('/assets/img/bg/trim-foot.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+    margin-top: 20px;
+    padding-top: 150px;
+    h5 {
+        @extend %font-moloko;
+        font-size: 45px;
+    }
+}
+
+.trimming-body {
+    .numail {
+        margin-top: 20px;
+        display: flex;
+        a {
+            text-align: left;
+        }
+        .number {
+            img, a {
+                margin-left: 4px;
+            }
+            display: flex;
+            align-items: center;
+            
+        }
     }
 }
 
 
+//Обрезка копыт форма
 
+$bezier: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$time: 300ms;
+
+$base-font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@mixin animated(
+  $time: 300ms,
+  $fillmode: both,
+  $count: 1) {
+  animation-duration: $time;
+  animation-fill-mode: $fillmode;
+  animation-iteration-count: $count;
+}
+
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 20px 16px 40px 16px;
+  transform: translateZ(0);
+  text-align: center;
+}
+
+.form-footer {
+  margin-top: 2em;
+}
+
+.ui-input {
+  position: relative;
+  padding: 0;
+  border: 0;
+}
+
+.ui-input input, .ui-input textarea {
+    resize: none;
+  font-family: $base-font-family;
+  border: 0;
+  background: none;
+  padding: 16px 0 16px 0;
+  font-size: 24px;
+  outline: 0;
+  width: 100%;
+  tap-highlight-color: rgba(0,0,0,0);
+  touch-callout: none;
+}
+
+.ui-input input + label, .ui-input textarea + label {
+  position: relative;
+  display: block;
+  padding: 8px 0 8px 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: .0875em;
+  font-weight: 500;
+  text-align: left;
+  
+  &::before, &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+  }
+  
+  &::before {
+    background-color: $font-gray;
+  }
+  
+  &::after {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform $time $bezier;
+    background-color: $font-green;
+    height: 2px;
+  }
+  
+  span {
+    position: relative;
+    color: $font-gray;
+    transition: color $time $bezier;
+   
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      overflow: hidden;
+      left: 0;
+      transform: scaleX(1);
+      white-space: nowrap;
+      color: $font-green;
+      
+      background-image: linear-gradient(to right,
+          $font-green 50%,
+          rgba(255,255,255,0) 0%);
+      background-position: 100% 50%;
+      background-size: 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      
+      backface-visibility: hidden;
+      perspective: 1000;
+      transform: translateZ(0);
+      
+      transition: background-position $time $bezier;
+    }
+  }
+}
+
+.ui-input input:focus,
+.ui-input input.error,
+.ui-input input:invalid,
+.ui-input input.filled,
+.ui-input textarea:focus,
+.ui-input textarea.error,
+.ui-input textarea:invalid,
+.ui-input textarea.filled
+{
+  
+  & + label {
+    
+    &::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    span::after {
+      //color: #4A90E2;
+      background-image: linear-gradient(to right,
+      rgba(255,255,255,1) 50%,
+      rgba(255,255,255,0) 0%);
+      background-position: 0% 50%;
+    }
+  }
+}
+
+.ui-input input.filled, .ui-input textarea.filled {
+  color: #ffffff;
+  
+  & + label {
+    
+    &::after {
+      background-color: #ffffff;
+    }
+    
+    span::after {
+      background-image: linear-gradient(to right,
+        #ffffff 50%,
+        rgba(255,255,255,0) 0%);
+      background-position: 0% 50%;
+    }
+  }
+}
+
+.ui-input input:focus, .ui-input textarea:focus {
+  color: $font-green;
+  
+  & + label {
+    
+    &::after {
+      background-color: $font-green;
+    }
+    
+    span::after {
+      background-image: linear-gradient(to right,
+      $font-green 50%,
+        rgba(255,255,255,0) 0%);
+      background-position: 0% 50%;
+    }
+  }
+}
+
+textarea:active, textarea:focus {
+    outline: none !important;
+}
+
+.ui-input input.error,
+.ui-input textarea.error,
+.ui-input input:invalid,
+.ui-input textarea:invalid {
+  color: #E66161;
+  
+  & + label {
+    
+    &::after {
+      background-color: #E66161;
+    }
+    
+    span::after {
+      background-image: linear-gradient(to right,
+        #E66161 50%,
+        rgba(255,255,255,0) 0%);
+      background-position: 0% 50%;
+    }
+  }
+}
+
+.btn {
+  border: 0;
+  background-color: $bg-gray;
+  padding: 18px 30px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: .0875em;
+  font-weight: 500;
+  color: $font-gray;
+  font-family: $base-font-family;
+  border-radius: 100px;
+  outline: 0;
+  transition: background-color $time $bezier,
+              color $time $bezier;
+}
+
+.btn:focus,.btn:active,
+.btn:hover {
+  background-color: $bg-green;
+  transition: 0.3;
+  color: $font-green;
+}
+
+.__first, .__second, .__third, .__fourth {
+  animation-name: fadeIn;
+  animation-duration: 180ms;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+.__first { animation-delay: 0; }
+.__second { animation-delay: 80ms; }
+.__third { animation-delay: 180ms; }
+.__fourth { animation-delay: 360ms; }
+
+input, textarea {
+    color: $font-gray;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -25%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
 //CSS Анимации
 
 #Head, #tail {

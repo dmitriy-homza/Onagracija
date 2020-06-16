@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.logo a, h1, .descr h3, .hoof-trimming .wrapper h3, .production h3, .production .slide h2 span, .production .slide-2 h2, .contacts h3, .contacts h5, .contacts .card > div h4, footer h2, .clock h2, .trimming .wrapper h5 {
+.logo a, h1, .descr h3, .hoof-trimming .wrapper h3, .production h3, .production .slide h2 span, .production .slide-2 h2, .contacts h3, .contacts h5, .contacts .card > div h4, footer h2, .clock h2, .trimming .wrapper h5, .trim-form h5 {
   font-family: 'Moloko', 'Monotype Corsiva';
   color: #2d5028;
 }
@@ -938,6 +938,8 @@ footer > div {
   background: #e7e6e6;
   font-weight: bold;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   /* Icon */
 }
 
@@ -952,16 +954,16 @@ footer > div {
   width: 1em;
   height: 1em;
   text-align: center;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
 .tab-content {
   max-height: 0;
   padding: 0 1em;
   background: white;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
 input:checked + .tab-label {
@@ -1308,6 +1310,41 @@ input:checked ~ .tab-content {
   footer div {
     width: calc(100% - 50px);
     max-width: 1150px;
+  }
+  .trimming-body {
+    background-position-y: 0% !important;
+  }
+  .trimming-body .trimming .wrapper .trimming-header {
+    padding: 0px 20px;
+  }
+  .trimming-body .trimming .wrapper .trimming-header .container {
+    padding-bottom: 20px;
+  }
+  .trimming-body .trimming .wrapper .trimming-header .container h1 {
+    font-size: 70px;
+  }
+  .trimming-body .trimming .wrapper .trimming-header .container h2 {
+    font-size: 20px;
+  }
+  .trimming-body .trimming .wrapper .trimming-header img {
+    height: 250px;
+    width: 250px;
+    padding-left: 50px;
+  }
+  .trimming-body .trimming .wrapper .targets {
+    width: calc(100% - 100px);
+    margin: 20px 50px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: auto;
+  }
+  .trimming-body .trimming .wrapper .targets .target {
+    max-width: inherit;
+    width: 100%;
+    margin: 10px 0px;
+  }
+  .trimming-body .trimming .wrapper .targets .target:hover {
+    height: 140px;
   }
 }
 
@@ -1676,6 +1713,27 @@ input:checked ~ .tab-content {
   background-color: #c1dcbd;
 }
 
+.trimming-body footer {
+  margin-top: 0px;
+}
+
+.trimming .wrapper .tabs {
+  display: block;
+  margin-right: auto;
+  margin-top: 40px;
+  height: 420px;
+}
+
+.trimming .wrapper .tabs .tab {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.trimming .wrapper .tabs h2 {
+  margin-top: 0px;
+  font-weight: 800;
+}
+
 .trimming .wrapper {
   max-width: 1200px;
   margin-left: auto;
@@ -1717,11 +1775,16 @@ input:checked ~ .tab-content {
       -ms-flex-pack: center;
           justify-content: center;
   max-width: 600px;
+  text-align: left;
 }
 
 .trimming .wrapper h5 {
   margin-top: 150px;
   font-size: 45px;
+}
+
+.trimming .wrapper .targets + h5, .trimming .wrapper .tabs + h5 {
+  margin-top: 50px;
 }
 
 .trimming .wrapper .targets {
@@ -1779,9 +1842,6 @@ input:checked ~ .tab-content {
   margin-top: 15px;
   opacity: 0;
   text-align: justify;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
 }
 
 .trimming .wrapper .targets .target svg {
@@ -1791,6 +1851,312 @@ input:checked ~ .tab-content {
 
 .trimming .wrapper h2 {
   margin-top: 10px;
+}
+
+.trim-form {
+  background-image: url("/assets/img/bg/trim-foot.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+  margin-top: 20px;
+  padding-top: 150px;
+}
+
+.trim-form h5 {
+  font-size: 45px;
+}
+
+.trimming-body .numail {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.trimming-body .numail a {
+  text-align: left;
+}
+
+.trimming-body .numail .number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.trimming-body .numail .number img, .trimming-body .numail .number a {
+  margin-left: 4px;
+}
+
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 20px 16px 40px 16px;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  text-align: center;
+}
+
+.form-footer {
+  margin-top: 2em;
+}
+
+.ui-input {
+  position: relative;
+  padding: 0;
+  border: 0;
+}
+
+.ui-input input, .ui-input textarea {
+  resize: none;
+  font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: 0;
+  background: none;
+  padding: 16px 0 16px 0;
+  font-size: 24px;
+  outline: 0;
+  width: 100%;
+  tap-highlight-color: rgba(0, 0, 0, 0);
+  touch-callout: none;
+}
+
+.ui-input input + label, .ui-input textarea + label {
+  position: relative;
+  display: block;
+  padding: 8px 0 8px 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: .0875em;
+  font-weight: 500;
+  text-align: left;
+}
+
+.ui-input input + label::before, .ui-input input + label::after, .ui-input textarea + label::before, .ui-input textarea + label::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+}
+
+.ui-input input + label::before, .ui-input textarea + label::before {
+  background-color: #656565;
+}
+
+.ui-input input + label::after, .ui-input textarea + label::after {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  background-color: #2d5028;
+  height: 2px;
+}
+
+.ui-input input + label span, .ui-input textarea + label span {
+  position: relative;
+  color: #656565;
+  -webkit-transition: color 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: color 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.ui-input input + label span::after, .ui-input textarea + label span::after {
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  white-space: nowrap;
+  color: #2d5028;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #2d5028), color-stop(0%, rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to right, #2d5028 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: 100% 50%;
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-transition: background-position 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: background-position 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.ui-input input:focus + label::after,
+.ui-input input.error + label::after,
+.ui-input input:invalid + label::after,
+.ui-input input.filled + label::after,
+.ui-input textarea:focus + label::after,
+.ui-input textarea.error + label::after,
+.ui-input textarea:invalid + label::after,
+.ui-input textarea.filled + label::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.ui-input input:focus + label span::after,
+.ui-input input.error + label span::after,
+.ui-input input:invalid + label span::after,
+.ui-input input.filled + label span::after,
+.ui-input textarea:focus + label span::after,
+.ui-input textarea.error + label span::after,
+.ui-input textarea:invalid + label span::after,
+.ui-input textarea.filled + label span::after {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, white), color-stop(0%, rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: 0% 50%;
+}
+
+.ui-input input.filled, .ui-input textarea.filled {
+  color: #ffffff;
+}
+
+.ui-input input.filled + label::after, .ui-input textarea.filled + label::after {
+  background-color: #ffffff;
+}
+
+.ui-input input.filled + label span::after, .ui-input textarea.filled + label span::after {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffffff), color-stop(0%, rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to right, #ffffff 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: 0% 50%;
+}
+
+.ui-input input:focus, .ui-input textarea:focus {
+  color: #2d5028;
+}
+
+.ui-input input:focus + label::after, .ui-input textarea:focus + label::after {
+  background-color: #2d5028;
+}
+
+.ui-input input:focus + label span::after, .ui-input textarea:focus + label span::after {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #2d5028), color-stop(0%, rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to right, #2d5028 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: 0% 50%;
+}
+
+textarea:active, textarea:focus {
+  outline: none !important;
+}
+
+.ui-input input.error,
+.ui-input textarea.error,
+.ui-input input:invalid,
+.ui-input textarea:invalid {
+  color: #E66161;
+}
+
+.ui-input input.error + label::after,
+.ui-input textarea.error + label::after,
+.ui-input input:invalid + label::after,
+.ui-input textarea:invalid + label::after {
+  background-color: #E66161;
+}
+
+.ui-input input.error + label span::after,
+.ui-input textarea.error + label span::after,
+.ui-input input:invalid + label span::after,
+.ui-input textarea:invalid + label span::after {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #E66161), color-stop(0%, rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to right, #E66161 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: 0% 50%;
+}
+
+.btn {
+  border: 0;
+  background-color: #e7e6e6;
+  padding: 18px 30px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: .0875em;
+  font-weight: 500;
+  color: #656565;
+  font-family: "Avenir Next", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-radius: 100px;
+  outline: 0;
+  -webkit-transition: background-color 300ms cubic-bezier(0.215, 0.61, 0.355, 1), color 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: background-color 300ms cubic-bezier(0.215, 0.61, 0.355, 1), color 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn:focus, .btn:active,
+.btn:hover {
+  background-color: #c1dcbd;
+  -webkit-transition: 0.3;
+  transition: 0.3;
+  color: #2d5028;
+}
+
+.__first, .__second, .__third, .__fourth {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 180ms;
+          animation-duration: 180ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+.__first {
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+
+.__second {
+  -webkit-animation-delay: 80ms;
+          animation-delay: 80ms;
+}
+
+.__third {
+  -webkit-animation-delay: 180ms;
+          animation-delay: 180ms;
+}
+
+.__fourth {
+  -webkit-animation-delay: 360ms;
+          animation-delay: 360ms;
+}
+
+input, textarea {
+  color: #656565;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -25%, 0);
+            transform: translate3d(0, -25%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -25%, 0);
+            transform: translate3d(0, -25%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
 }
 
 #Head, #tail {

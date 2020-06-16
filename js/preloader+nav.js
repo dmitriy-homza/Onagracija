@@ -39,4 +39,9 @@ function isNotBurger () {
   setTimeout(() => document.querySelector('.burger-overflow-animation').classList.remove('burger-overflow-animation'),500);
 }
 	  
-	  
+//Обрезка копыт форма
+var $input = $('.form-fieldset > input');
+
+$input.blur(function (e) {
+  $(this).toggleClass('filled', !!$(this).val());
+});
